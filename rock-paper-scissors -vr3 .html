@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Rock-Paper-scissors-Game</title>
+    </head>
+    <style>
+        button{
+            background-color: brown;
+            padding-top: 10px;
+            padding-left: 10px;
+            padding-bottom: 10px;
+            padding-right: 10px;
+            color: white;
+            border-Width:2px;
+            border-color: pink;
+            border-style:solid;
+            border-radius:20px;
+            cursor: pointer;
+        }
+       
+    </style>
+    <body>
+
+       <p style="
+      font-size: 50px;
+        color: darkmagenta;">Rock-Paper-scissors</p>
+
+       <button onclick="
+            let randomNumber =Math.round(Math.random()*10);
+            let computerMove ='';
+
+            if (randomNumber >= 0 && randomNumber< 4){
+                computermove = 'Rock';
+            } else if(randomNumber >=  4 && randomNumber < 7 ){
+                computerMove = 'Paper';
+            } if (randomNumber >=  7 && randomNumber < 11){
+                computerMove = 'Scissors';
+            }
+                    let result='';
+
+                if('Rock===computerMove') {
+                    result='its a tie';
+                } else if('Paper===computerMove'){
+                    result='You lose!';
+                } else  if ('Scissors===computerMove'){
+                    result='You win!';
+                }
+
+            console.log(`YOU PICKED ROCK;COMPUTER PICKED ${computerMove} ;${randomNumber}`);
+       ">rock</button>
+            
+       
+        <button onclick=" ">Paper</button>
+
+
+        <button onclick="">Scissors</button>
+       
+     </body>
+</html>
