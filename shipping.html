@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipping Machine 💖</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #ffe6f2;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: auto;
+        }
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            color: #ff4d79;
+        }
+        input {
+            padding: 10px;
+            width: 80%;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ff4d79;
+            text-align: center;
+        }
+        button {
+            background-color: #ff4d79;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #ff0066;
+        }
+    </style>
+    <script>
+        function checkCompatibility() {
+            var name1 = document.getElementById("name1").value;
+            var name2 = document.getElementById("name2").value;
+            if (name1.trim() === "" || name2.trim() === "") {
+                alert("Please enter both names!");
+                return;
+            }
+            
+            var score = Math.floor(Math.random() * 100) + 1;
+            var message = "";
+            if (score > 80) {
+                message = "💖 Perfect Match! You two are meant for each other! 💖";
+            } else if (score > 50) {
+                message = "💕 You both are a good match, but some effort is needed! 💕";
+            } else {
+                message = "💔 Maybe just stay friends... 💔";
+            }
+            document.getElementById("result").innerHTML = `${name1} + ${name2} = ${score}%<br>${message}`;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Shipping Machine 💖</h1>
+        <p>Enter two names to see if they're meant to be!</p>
+        <input type="text" id="name1" placeholder="Enter first name">
+        <input type="text" id="name2" placeholder="Enter second name"><br>
+        <button onclick="checkCompatibility()">Ship Them! 💘</button>
+        <div class="result" id="result"></div>
+    </div>
+</body>
+</html>
